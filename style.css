@@ -1,0 +1,237 @@
+/* This code was taken from https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
+/* This code makes it so that when a nav link is clicked, there is an offset from the top so that the page content is not scrolled too far and hidden under the nav bar */
+html {
+    scroll-padding-top: 110px;
+}
+  
+  /* box sizing */
+  
+  
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #a8feff;
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+}
+  
+  /* element styling (e.g. standard p, h1, h2, a, etc) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+  
+h1 {
+    font-size: 50px;
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+  /* flexible content images code */
+  
+  
+  /* navigation styles */
+  
+  /* This code was taken and adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_menu */
+  /* This code makes the nav bar stay on a fixed place on the screen, until the page is scrolled and it will become stuck to the top
+  It also makes it stay on top of everything so that you can always see and click the nav links */
+.navigation {
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #a8feff;
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    text-emphasis: none;
+}
+  
+section {
+    background-color: #a8feff;
+}
+  
+a:link {
+    color: black;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+.navigation a {
+    border-left: 1px solid black;
+    padding: 5px 15px;
+    color: black;
+}
+  
+  /* This code was taken and adaapted from https://www.w3schools.com/cssref/sel_nth-child.asp */
+  /* This code selects the 1st element of navigation that is an anchor (a), and makes it not have a border on the left, so that the borders only seperate the nav links */
+.navigation a:nth-child(1) {
+    border-left: none;
+}
+  
+  /* page header styles*/
+.header-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+  
+#header-box {
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+  
+#name {
+    font-size: 144pt;
+    margin-bottom: 0px;
+}
+  
+#subText {
+    margin-top: 0px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+  
+#header-box > p:nth-child(2) {
+    margin: 0 0 2px 0;
+}
+  
+  /* main layout */
+.main-style {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 120px;
+}
+  
+  /* styling for the section content */
+.container-content {
+    text-align: center;
+}
+  
+section {
+    margin-top: 70px;
+}
+  
+  /* image styling */
+  
+div.an-image {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+  
+#poster {
+    width: 100%;
+}
+  
+  /* Here the position of the overlay is always on top of the image itself, but it is set to be transparent with opacity: 0
+  transition: .5s means that when it is moused over, the transition will take 0.5 seconds rather than bne instant */
+  
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #fff5db;
+  }
+  
+.an-image:hover .overlay {
+    opacity: 0.85;
+}
+  
+  /* image overlay found here https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade */
+  
+  /* The top: 50% and left: 50% makes the text start from the centre of the picture, 
+  then the transfrom: translate(-50%, -50%) makes the text move 50% to the left, and 50% to the top, 
+  making it perfectly centred responsively depending on the size of the text */
+  
+.text_over_image {
+    font-family: inherit;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+  
+#images .container-content .content {
+    text-align: center;
+}
+  
+  /* background colours for sections */
+  
+  
+  /* form styling */
+  
+label {
+    display: inline-block;
+    width: 200px;
+}
+  
+input, textarea {
+    background-color: #f0f0f075;
+    border: 1px solid black;
+    padding: 5px;
+    width: 200px;
+  
+}
+  
+  
+  
+label[for=contact-message] {
+    vertical-align: top;
+}
+  
+input[type=submit] {
+    margin-left: 205px;
+    width: 213px;
+    font-family: inherit;
+    background-color: #dadadabd;
+    padding: 7px 0;
+}
+  
+input[type=submit]:hover {
+    background-color: #eeeeeea1;
+}
+  
+input[type=submit]:active {
+    background-color: #e4e4e4a4;
+}
+  
+#linked_in {
+    display: block;
+    padding-top: 70px;
+}
+  
+#linked_in img {
+    width: 64px;
+    height: 64px;
+}
+  
+  /* footer styling */
+footer {
+    display: block;
+    margin-top: 140px;
+    padding: 40px 0px 40px 0px;
+    background-color: rgb(83, 83, 83);
+}
+ 
+.logo {
+    width: 50px;
+}
